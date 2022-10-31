@@ -5,6 +5,7 @@ import az.izobretatel7777.hackersuitcase.dao.entity.CommentVote;
 import az.izobretatel7777.hackersuitcase.dao.entity.User;
 import az.izobretatel7777.hackersuitcase.dao.repo.CommentRepository;
 import az.izobretatel7777.hackersuitcase.dao.repo.CommentVoteRepository;
+import az.izobretatel7777.hackersuitcase.dao.repo.PostRepository;
 import az.izobretatel7777.hackersuitcase.dao.repo.UserRepository;
 import az.izobretatel7777.hackersuitcase.service.CommentService;
 import lombok.RequiredArgsConstructor;
@@ -12,12 +13,15 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
+
 @Service
 @RequiredArgsConstructor
 public class CommentServiceImpl implements CommentService {
     private final CommentRepository commentRepository;
     private final UserRepository userRepository;
     private final CommentVoteRepository commentVoteRepository;
+    private final PostRepository postRepository;
 
     @Override
     public boolean deleteComment(long id) {
@@ -70,5 +74,16 @@ public class CommentServiceImpl implements CommentService {
         comment.setRating(rating);
         commentRepository.save(comment);
         commentVoteRepository.save(commentVote);
+    }
+
+    @Override
+    public void addComment(long postId, String content) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        Comment comment = new Comment();
+        comment.setContent(content);
+        comment.setAuthor(userRepository.findByEmail(auth.getName()));
+        comment.setCreated(new Timestamp(System.currentTimeMillis()));
+        comment.setPost(postRepository.findById(postId).orElseThrow());
+        commentRepository.save(comment);
     }
 }

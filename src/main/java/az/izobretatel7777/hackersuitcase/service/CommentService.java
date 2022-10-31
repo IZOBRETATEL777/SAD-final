@@ -8,4 +8,5 @@ public interface CommentService {
     boolean deleteComment(long id);
     void likeComment(long id);
     void dislikeComment(long id);
+    void addComment(long postId, String content);
 }

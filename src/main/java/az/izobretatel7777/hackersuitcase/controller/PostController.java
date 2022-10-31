@@ -1,11 +1,10 @@
 package az.izobretatel7777.hackersuitcase.controller;
 
-import az.izobretatel7777.hackersuitcase.dao.entity.Comment;
 import az.izobretatel7777.hackersuitcase.dao.entity.Post;
 import az.izobretatel7777.hackersuitcase.dao.repo.CommentRepository;
-import az.izobretatel7777.hackersuitcase.dao.repo.UserRepository;
 import az.izobretatel7777.hackersuitcase.dto.NewCommentForm;
 import az.izobretatel7777.hackersuitcase.dto.NewPostForm;
+import az.izobretatel7777.hackersuitcase.service.CommentService;
 import az.izobretatel7777.hackersuitcase.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
@@ -19,15 +18,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
-import java.sql.Timestamp;
 
 @Controller
 @RequiredArgsConstructor
 @RequestMapping(value = "/posts")
 public class PostController {
     private final PostService  postService;
+    private final CommentService commentService;
     private final CommentRepository commentRepository;
-    private final UserRepository userRepository;
 
     @RequestMapping(method = RequestMethod.GET)
     public String getAllPosts(Model model) {
@@ -59,7 +57,6 @@ public class PostController {
     @RequestMapping(value = "{id}", method = RequestMethod.POST)
     public String addComment(@Valid @ModelAttribute("newComment") NewCommentForm newComment,
                           BindingResult result,
-                          Authentication authentication,
                           @PathVariable long id,
                           Model model) {
 
@@ -68,14 +65,7 @@ public class PostController {
             model.addAttribute("comments", commentRepository.findByPostId(id));
             return "index";
         }
-
-        Comment comment = new Comment();
-        comment.setContent(newComment.getContent());
-        comment.setAuthor(userRepository.findByEmail(authentication.getName()));
-        comment.setCreated(new Timestamp(System.currentTimeMillis()));
-        comment.setPost(postService.getPostById(id));
-        commentRepository.save(comment);
-
+        commentService.addComment(id, newComment.getContent());
         model.asMap().clear();
         return "redirect:/posts/" + id;
     }
