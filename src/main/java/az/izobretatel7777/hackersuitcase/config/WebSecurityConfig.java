@@ -3,7 +3,7 @@ package az.izobretatel7777.hackersuitcase.config;
 
 import javax.sql.DataSource;
 
-import az.izobretatel7777.hackersuitcase.service.CustomUserDetailsService;
+import az.izobretatel7777.hackersuitcase.service.implementations.CustomUserDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
