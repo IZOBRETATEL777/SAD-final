@@ -1,10 +1,9 @@
-package az.izobretatel7777.hackersuitcase.security.implementations;
+package az.izobretatel7777.hackersuitcase.service.implementations;
 
-import az.izobretatel7777.hackersuitcase.dao.entity.Comment;
 import az.izobretatel7777.hackersuitcase.dao.entity.Post;
 import az.izobretatel7777.hackersuitcase.dao.repo.PostRepository;
 import az.izobretatel7777.hackersuitcase.dao.repo.UserRepository;
-import az.izobretatel7777.hackersuitcase.security.PostService;
+import az.izobretatel7777.hackersuitcase.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
