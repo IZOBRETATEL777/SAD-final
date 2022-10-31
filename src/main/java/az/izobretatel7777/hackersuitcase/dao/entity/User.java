@@ -6,6 +6,7 @@ import lombok.experimental.FieldDefaults;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.List;
 
@@ -43,6 +44,23 @@ public class User {
 	@Column(columnDefinition = "varchar(50)")
 	@Size(max = 50)
 	String company;
+
+	@Column(name = "phone_number", columnDefinition = "varchar(15)")
+	@Pattern(regexp = "(^[0-9,\\-\\+]{9,15}$|^$)")
+	String phoneNumber;
+
+	@Column(name = "OTP")
+	@Pattern(regexp = "^[0-9]{6}$")
+	String otp;
+
+	@Column(name = "active", nullable = false, columnDefinition = "boolean default true")
+	boolean active = true;
+
+	@Column(name = "role", nullable = false, columnDefinition = "varchar(10) default 'USER'")
+	String role = "USER";
+
+	@Column(columnDefinition = "int default 1")
+	Integer voteWeight;
 
 	@OneToMany(mappedBy = "author")
 	List<Comment> comments;

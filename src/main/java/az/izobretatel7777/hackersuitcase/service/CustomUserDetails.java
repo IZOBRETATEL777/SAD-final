@@ -1,4 +1,4 @@
-package az.izobretatel7777.hackersuitcase.security;
+package az.izobretatel7777.hackersuitcase.service;
 
 import java.util.Collection;
 
