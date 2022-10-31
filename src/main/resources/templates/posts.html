@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+>
+<head>
+    <title>List of posts</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-image: url("images/background.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<style>
+    .container {
+        margin-top: 20px;
+    }
+    .tr {
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div th:replace="header :: content"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-light">
+            <h1>Recent Articles</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-light">
+            <table class="table table-striped table-dark">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Created</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="post : ${posts}">
+                        <td><a th:href="@{posts/} + ${post.getId()}" style="display:block;" th:text="${post.title}"></a></td>
+                        <td th:text="${post.getAuthor().getFirstName()}"></td>
+                        <td th:text="${post.getCreated()} ? ${#calendars.format(post.getCreated(), 'HH:mm dd MMMM yyyy')}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div th:replace="footer :: content"></div>
+</body>
+</html>
