@@ -1,524 +1,347 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
 
-        <meta name="description" content="">
-        <meta name="author" content="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Hacker Suitcases</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-        <!-- CSS FILES -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Hacker Suitcases</title>
 
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="css/templatemo-leadership-event.css" rel="stylesheet">
 
-        <link href="css/bootstrap-icons.css" rel="stylesheet">
-
-        <link href="css/templatemo-leadership-event.css" rel="stylesheet">
-        
-        
-<!--
-
+    <!--
 TemplateMo 575 Leadership Event
-
 https://templatemo.com/tm-575-leadership-event
-
-Edited by IZOBRETATEL777
-
+Edited by IZOBRETATEL777 and Sadykhzadeh
 -->
-    </head>
-    
-    <body>
 
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
+</head>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<body>
 
-                <a href="index.html" class="navbar-brand mx-auto mx-lg-0">
-                    <i class="bi-bullseye brand-logo"></i>
-                    <span class="brand-text">Hacker <br> Suitcases</span>
-                </a>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
 
-                <a class="nav-link custom-btn btn d-lg-none" href="@{/posts}">See posts</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_1">Home</a>
-                        </li>
+            <a href="index.html" class="navbar-brand mx-auto mx-lg-0">
+                <i class="bi-bullseye brand-logo"></i>
+                <span class="brand-text">Hacker <br> Suitcases</span>
+            </a>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_2">About</a>
-                        </li>
+            <a class="nav-link custom-btn btn d-lg-none" href="@{/posts}">See posts</a>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_3">Creators</a>
-                        </li>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_1">Home</a>
+                    </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_4">Suitcases</a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_2">About</a>
+                    </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_7">Contact</a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_3">Creators</a>
+                    </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link custom-btn btn d-none d-lg-block" href="/login">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link custom-btn btn d-none d-lg-block" href="/register">Register</a>
-                        </li>
-                    </ul>
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_4">Suitcases</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_7">Contact</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link custom-btn btn d-none d-lg-block" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-btn btn d-none d-lg-block" href="/register">Register</a>
+                    </li>
+                </ul>
                 <div>
-                        
+
+                </div>
+    </nav>
+
+    <main>
+
+        <section class="hero" id="section_1">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-5 col-12 m-auto">
+                        <div class="hero-text">
+
+                            <h1 class="text-white mb-4">Software solutions for Cyber security</h1>
+
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="/posts">
+                                    <h3 class="text-info">See forum</h3></u>
+                            </div>
+
+                            <a href="#section_2" class="custom-link bi-arrow-down arrow-icon"></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </nav>
 
-        <main>
+            <div class="video-wrap">
+                <image src="images/hacker-main.jpg" width="100%">
+            </div>
+        </section>
 
-            <section class="hero" id="section_1">
-                <div class="container">
-                    <div class="row">
 
-                        <div class="col-lg-5 col-12 m-auto">
-                            <div class="hero-text">
+        <section class="highlight">
+            <div class="container">
+                <div class="row">
 
-                                <h1 class="text-white mb-4">Software solutions for Cyber security</h1>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="highlight-thumb">
+                            <img src="images/pentest.jpg" class="highlight-image img-fluid" alt="">
 
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="/posts"><h3 class="text-info">See forum</h3></u>
-                                </div>
+                            <div class="highlight-info">
+                                <h3 class="highlight-title">Network attacks</h3>
 
-                                <a href="#section_2" class="custom-link bi-arrow-down arrow-icon"></a>
+                                <a href="#" class="highlight-icon"></a>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="video-wrap">
-					<image src="images/hacker-main.jpg" width="100%">
-                </div>
-            </section>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="highlight-thumb">
+                            <img src="images/forensics.jpeg" class="highlight-image img-fluid" alt="">
 
+                            <div class="highlight-info">
+                                <h3 class="highlight-title">Forensics</h3>
 
-            <section class="highlight">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="highlight-thumb">
-                                <img src="images/pentest.jpg" class="highlight-image img-fluid" alt="">
-
-                                <div class="highlight-info">
-                                    <h3 class="highlight-title">Network attacks</h3>
-
-                                    <a href="#" class="highlight-icon"></a>
-                                </div>
+                                <a href="#" class="highlight-icon"></a>
                             </div>
                         </div>
-
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="highlight-thumb">
-                                <img src="images/forensics.jpeg" class="highlight-image img-fluid" alt="">
-
-                                <div class="highlight-info">
-                                    <h3 class="highlight-title">Forensics</h3>
-
-                                    <a href="#" class="highlight-icon"></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="highlight-thumb">
-                                <img src="images/educaiton.jpg" class="highlight-image img-fluid" alt="">
-
-                                <div class="highlight-info">
-                                    <h3 class="highlight-title">Cyber security education</h3>
-
-                                    <a href="#" class="highlight-icon"></a>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
-                </div>
-            </section>
 
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="highlight-thumb">
+                            <img src="images/educaiton.jpg" class="highlight-image img-fluid" alt="">
 
-            <section class="about section-padding" id="section_2">
-                <div class="container">
-                    <div class="row">
+                            <div class="highlight-info">
+                                <h3 class="highlight-title">Cyber security education</h3>
 
-                        <div class="col-lg-10 col-12">
-                            <h2 class="mb-4">Our <u class="text-info">Story</u></h2>
-                        </div>
-
-                        <div class="col-lg-6 col-12">
-                            <h3 class="mb-3">The importance of software in Cyber security</h3>
-                            <p>
-                                Cyber security is a field where everyone have to work with software specially related to one direction. It can Penetration testing, Log analysis, SecOps, so on.
-                                Sometimes it is difficult to install or keep updated a piece of software. In some cases it is a laborious work, in other: people are not aware of better alternatives. 
-                                Our solutions is to make Cyber security specialist happier and more productive with their job by automating the process of installation and configuration of their favorite program.
-                                Use Breath OS and try out a suitcase - a package of software specially designed for you. Need more? Give suggestions and ideas to our forum.
-                            </p>
-                            <a class="custom-btn btn custom-link mt-3" href="#section_4">Suitcases</a>
-                            <a class="custom-btn custom-border-btn btn custom-link mt-3 me-3" href="/posts">See forum</a>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="speakers section-padding" id="section_3">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-6 col-12 d-flex flex-column justify-content-center align-items-center">
-                            <div class="speakers-text-info">
-                                <h2 class="mb-4">Creators</h2>
-                                <p>There list of people who made this project</p>
+                                <a href="#" class="highlight-icon"></a>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-lg-6 col-12">
-                            <div class="speakers-thumb">
-                                <img src="images/avatar/roman.jpeg" class="img-fluid speakers-image" alt="">
+                </div>
+            </div>
+        </section>
 
-                                <small class="speakers-featured-text">Team leader</small>
 
-                                <div class="speakers-info">
+        <section class="about section-padding" id="section_2">
+            <div class="container">
+                <div class="row">
 
-                                    <h5 class="speakers-title mb-0">Roman Tolstosheyev</h5>
+                    <div class="col-lg-10 col-12">
+                        <h2 class="mb-4">Our <u class="text-info">Story</u></h2>
+                    </div>
 
-                                    <p class="speakers-text mb-0">CEO / CTO</p>
+                    <div class="col-lg-6 col-12">
+                        <h3 class="mb-3">The importance of software in Cyber security</h3>
+                        <p>
+                            Cyber security is a field where everyone have to work with software specially related to one
+                            direction. It can Penetration testing, Log analysis, SecOps, so on.
+                            Sometimes it is difficult to install or keep updated a piece of software. In some cases it
+                            is a laborious work, in other: people are not aware of better alternatives.
+                            Our solutions is to make Cyber security specialist happier and more productive with their
+                            job by automating the process of installation and configuration of their favorite program.
+                        </p>
+                        <a class="custom-btn btn custom-link mt-3" href="#section_4">Suitcases</a>
+                        <a class="custom-btn custom-border-btn btn custom-link mt-3 me-3" href="/posts">See forum</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="schedule section-padding" id="section_4">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-12">
+
+                        <div class="tab-content mt-5" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-DayOne" role="tabpanel"
+                                aria-labelledby="nav-DayOne-tab">
+
+                                <div class="row border-bottom pb-5 mb-5">
+                                    <div class="col-lg-4 col-12">
+                                        <img src="images/community.jpg" class="schedule-image img-fluid" alt="">
+                                    </div>
+
+                                    <div class="col-lg-8 col-12 mt-3 mt-lg-0">
+                                        <h4 class="mb-2">Community support</h4>
+
+                                        <p>
+                                            This is community driven project that is why we are always looking for new
+                                            contributors.
+                                            Are you a tool developer? May be you are working in a a company that creates
+                                            own security software? Are you just a cyber security specialist?
+                                            Just post in our forum, and we will help to you accelerate your projects and
+                                            shape our suitcases to make them better.
+                                        </p>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="row border-bottom pb-5 mb-5">
+                                    <div class="col-lg-4 col-12">
+                                        <img src="images/learning.jpg" class="schedule-image img-fluid" alt="">
+                                    </div>
+
+                                    <div class="col-lg-8 col-12 mt-3 mt-lg-0">
+                                        <h4 class="mb-2">The best for learners</h4>
+
+                                        <p>
+                                            This project can support not only professionals of cyber security careers,
+                                            but also beginners.
+                                            Now, the list of professional tools is clear! Start to learn how to use it
+                                            right now, without any problems.
+                                            No red eyes and black terminals.
+                                        </p>
+
+                                    </div>
+                                </div>
+
+                                <div class="row border-bottom pb-5 mb-5">
+                                    <div class="col-lg-4 col-12">
+                                        <img src="images/national-hacker.jpg" class="schedule-image img-fluid" alt="">
+                                    </div>
+
+                                    <div class="col-lg-8 col-12 mt-3 mt-lg-0">
+                                        <h4 class="mb-2">Made in Azerbaijan 🇦🇿</h4>
+
+                                        <p>
+                                            We use technologies developed in our country - Azerbaijan.
+                                            Project specially created for System and Design Analysis cource of Baku
+                                            Higher Oil School.
+                                        </p>
+
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-lg-12 col-12">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="speakers-thumb speakers-thumb-small">
-                                        <img src="images/avatar/nazrin.jpeg" class="img-fluid speakers-image" alt="">
-
-                                        <div class="speakers-info">
-                                            <h5 class="speakers-title mb-0">Nazrin Nasirova</h5>
-
-                                            <p class="speakers-text mb-0">Researcher</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="speakers-thumb speakers-thumb-small">
-                                        <img src="images/avatar/sabina.jpeg" class="img-fluid speakers-image" alt="">
-
-                                        <div class="speakers-info">
-                                            <h5 class="speakers-title mb-0">Sabina Hajiyeva</h5>
-
-                                            <p class="speakers-text mb-0">Tester</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="speakers-thumb speakers-thumb-small">
-                                        <img src="images/avatar/murad.jpeg" class="img-fluid speakers-image" alt="">
-
-                                        <div class="speakers-info">
-                                            <h5 class="speakers-title mb-0">Murad Shafiyev</h5>
-
-                                            <p class="speakers-text mb-0">Developer</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="speakers-thumb speakers-thumb-small">
-                                        <img src="images/avatar/arif.jpeg" class="img-fluid speakers-image" alt="">
-
-                                        <div class="speakers-info">
-                                            <h5 class="speakers-title mb-0">Arif Abdullayev</h5>
-
-                                            <p class="speakers-text mb-0">Researcher</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="schedule section-padding" id="section_4">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-12 col-12">
-
-                            <div class="tab-content mt-5" id="nav-tabContent">
-                                <div class="tab-pane fade show active" id="nav-DayOne" role="tabpanel" aria-labelledby="nav-DayOne-tab">
-
-                                    <div class="row border-bottom pb-5 mb-5">
-                                        <div class="col-lg-4 col-12">
-                                            <img src="images/package.jpg" class="schedule-image img-fluid" alt="">
-                                        </div>
-
-                                        <div class="col-lg-8 col-12 mt-3 mt-lg-0">
-                                            
-                                            <h4 class="mb-2">Powerful packages</h4>
-
-                                            <p>
-                                                Suitcases - are packages that contain everything for a specific major or industry.
-                                                Our suitcases are oriented to cyber security specialists of different categories.
-                                                For each category there is a package that is designed to meet the needs of the specialist and you can find them in BStore.
-                                            </p>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="row border-bottom pb-5 mb-5">
-                                        <div class="col-lg-4 col-12">
-                                            <img src="images/breathos.jpg" class="schedule-image img-fluid" alt="">
-                                        </div>
-
-                                        <div class="col-lg-8 col-12 mt-3 mt-lg-0">
-                                            <h4 class="mb-2">All in one OS</h4>
-
-                                            <p>
-                                                Stop to download different variations of Linux distributions with different sets of programs.
-                                                Just download <a href="breathos.github.io">Breath OS</a> and you will have a chance to use the programs that you want.
-                                                You only have to select suitable to you suitcase.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div class="row border-bottom pb-5 mb-5">
-                                        <div class="col-lg-4 col-12">
-                                            <img src="images/community.jpg" class="schedule-image img-fluid" alt="">
-                                        </div>
-
-                                        <div class="col-lg-8 col-12 mt-3 mt-lg-0">
-                                            <h4 class="mb-2">Community support</h4>
-
-                                            <p>
-                                                This is community driven project that is why we are always looking for new contributors.
-                                                Are you a tool developer? May be you are working in a a company that creates own security software? Are you just a cyber security specialist?
-                                                Just post in our forum, and we will help to you accelerate your projects and shape our suitcases to make them better.
-                                            </p>
-
-                                        </div>
-                                    </div>
-
-
-                                    <div class="row border-bottom pb-5 mb-5">
-                                        <div class="col-lg-4 col-12">
-                                            <img src="images/learning.jpg" class="schedule-image img-fluid" alt="">
-                                        </div>
-
-                                        <div class="col-lg-8 col-12 mt-3 mt-lg-0">
-                                            <h4 class="mb-2">The best for learners</h4>
-
-                                            <p>
-                                                This project can support not only professionals of cyber security careers, but also beginners.
-                                                Now, the list of professional tools is clear! Start to learn how to use it right now, without any problems.
-                                                No red eyes and black terminals.
-                                            </p>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="row border-bottom pb-5 mb-5">
-                                        <div class="col-lg-4 col-12">
-                                            <img src="images/national-hacker.jpg" class="schedule-image img-fluid" alt="">
-                                        </div>
-
-                                        <div class="col-lg-8 col-12 mt-3 mt-lg-0">
-                                            <h4 class="mb-2">Made in Azerbaijan 🇦🇿</h4>
-
-                                            <p>
-                                                We use technologies developed in our country - Azerbaijan.
-                                                Project specially created for Cyber security courses provided by Institute of Education of the Republic of Azerbaijan (ARTİ).
-                                            </p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="nav-DayFour" role="tabpanel" aria-labelledby="nav-DayFour-tab">
-                                    <div class="row">
-                                        <div class="col-lg-4 col-12">
-                                            <img src="images/schedule/jeshoots-com-TWRCH-GaKr4-unsplash.jpg" class="schedule-image img-fluid" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <section class="call-to-action section-padding">
-                <div class="container">
-                    <div class="row align-items-center">
-
-                        <div class="col-lg-7 col-12">
-                            <h2 class="text-white mb-4">Have <u class="text-info">idea for a suitcase?</u></h2>
-
-                            <p class="text-white">Feel free to create post in our forum.</p>
-                        </div>
-
-                        <div class="col-lg-3 col-12 ms-lg-auto mt-4 mt-lg-0">
-                            <a href="/post_form.html" class="custom-btn btn">Create a post today!</a>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <section class="venue section-padding" id="section_6">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-12 col-12">
-                            <h2 class="mb-5">Here you go</h2>
-                        </div>
-
-                        <div class="col-lg-6 col-12">
-                            <iframe class="google-map" src="https://maps.google.com/maps?q=Baku&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" width="100%" height="371.59" allowfullscreen="" loading="lazy"></iframe>
-                        </div>
-
-                        <div class="col-lg-6 col-12 mt-5 mt-lg-0">
-                            <div class="venue-thumb bg-white shadow-lg">
-                                <div class="venue-info-body">
-                                    <h4 class="d-flex">
-                                        <i class="bi-geo-alt me-2"></i> 
-                                        <span>Azerbaijan, Baku</span>
-                                    </h4>
-
-                                    <h5 class="mt-4 mb-3">
-                                        <a href="mailto:rnbtree@mail.az">
-                                            <i class="bi-envelope me-2"></i>
-                                            rnbtree@mail.az
-                                        </a>
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <section class="contact section-padding" id="section_7">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-8 col-12 mx-auto">
-                            <form class="custom-form contact-form bg-white shadow-lg" action="#" method="post" role="form">
-                                <h2>Please Say Hi</h2>
-
+                            <div class="tab-pane fade" id="nav-DayFour" role="tabpanel"
+                                aria-labelledby="nav-DayFour-tab">
                                 <div class="row">
-                                    <div class="col-lg-4 col-md-4 col-12">                                    
-                                        <input type="text" name="name" id="name" class="form-control" placeholder="Name" required="">
+                                    <div class="col-lg-4 col-12">
+                                        <img src="images/schedule/jeshoots-com-TWRCH-GaKr4-unsplash.jpg"
+                                            class="schedule-image img-fluid" alt="">
                                     </div>
-
-                                    <div class="col-lg-4 col-md-4 col-12">         
-                                        <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email" required="">
-                                    </div>
-
-                                    <div class="col-lg-4 col-md-4 col-12">                                    
-                                        <input type="text" name="subject" id="subject" class="form-control" placeholder="Subject">
-                                    </div>
-
-                                    <div class="col-12">
-                                        <textarea class="form-control" rows="5" id="message" name="message" placeholder="Message"></textarea>
-
-                                        <button type="submit" class="form-control">Submit</button>
-                                    </div>
-
                                 </div>
-                            </form>
+                            </div>
+
                         </div>
-
                     </div>
+
                 </div>
-            </section>
+            </div>
+        </section>
 
-        </main>
-
-        <footer class="site-footer">
+        <section class="call-to-action section-padding">
             <div class="container">
                 <div class="row align-items-center">
 
-                    <div class="col-lg-12 col-12 border-bottom pb-5 mb-5">
-                        <div class="d-flex">
-                            <a href="index.html" class="navbar-brand">
-                                <i class="bi-bullseye brand-logo"></i>
-                                <span class="brand-text">Hacker <br> Suitcases </span>
-                            </a>
-
-                            <ul class="social-icon ms-auto">
-                                <li><a href="https://www.facebook.com/AzeLinux" class="social-icon-link bi-facebook"></a></li>
-
-                                <li><a href="https://www.youtube.com/channel/UCgp90kdP27b51yWtd12bVmg" class="social-icon-link bi-youtube"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-
                     <div class="col-lg-7 col-12">
-                        <ul class="footer-menu d-flex flex-wrap">
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Our Story</a></li>
+                        <h2 class="text-white mb-4">Have <u class="text-info">idea for a forum?</u></h2>
 
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Code of Conduct</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Privacy and Terms</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Contact</a></li>
-                        </ul>
+                        <p class="text-white">Feel free to create post here.</p>
                     </div>
 
-                        
-                    <div class="col-lg-5 col-12 ms-lg-auto">
-                        <div class="copyright-text-wrap d-flex align-items-center">
-                            <p class="copyright-text ms-lg-auto me-4 mb-0">Copyright © 2022 Hacker suitcases. 
-                            
-                            <br>All Rights Reserved. 
-          
-          					<br><br>Design: <a title="CSS Templates" rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
-
-                            <a href="#section_1" class="bi-arrow-up arrow-icon custom-link"></a>
-                        </div>
+                    <div class="col-lg-3 col-12 ms-lg-auto mt-4 mt-lg-0">
+                        <a href="/post_form.html" class="custom-btn btn">Create a post today!</a>
                     </div>
 
                 </div>
             </div>
-        </footer>
+        </section>
 
-        <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/click-scroll.js"></script>
-        <script src="js/custom.js"></script>
+    </main>
 
-    </body>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-lg-12 col-12 border-bottom pb-5 mb-5">
+                    <div class="d-flex">
+                        <a href="index.html" class="navbar-brand">
+                            <i class="bi-bullseye brand-logo"></i>
+                            <span class="brand-text">Hacker <br> Suitcases </span>
+                        </a>
+
+                        <ul class="social-icon ms-auto">
+                            <li><a href="https://www.facebook.com/AzeLinux" class="social-icon-link bi-facebook"></a>
+                            </li>
+
+                            <li><a href="https://www.youtube.com/channel/UCgp90kdP27b51yWtd12bVmg"
+                                    class="social-icon-link bi-youtube"></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- <div class="col-lg-7 col-12">
+                <ul class="footer-menu d-flex flex-wrap">
+                    <li class="footer-menu-item"><a href="#" class="footer-menu-link">Our Story</a></li>
+
+                    <li class="footer-menu-item"><a href="#" class="footer-menu-link">Code of Conduct</a></li>
+
+                    <li class="footer-menu-item"><a href="#" class="footer-menu-link">Privacy and Terms</a></li>
+
+                    <li class="footer-menu-item"><a href="#" class="footer-menu-link">Contact</a></li>
+                </ul>
+            </div> -->
+
+
+                <div class="col-lg-5 col-12 ms-lg-auto">
+                    <div class="copyright-text-wrap d-flex align-items-center">
+                        <p class="copyright-text ms-lg-auto me-4 mb-0">Copyright © 2022 Hacker suitcases.
+
+                            <br>All Rights Reserved.
+
+                            <br><br>Design: <a title="CSS Templates" rel="sponsored" href="https://templatemo.com"
+                                target="_blank">TemplateMo</a>
+                            and
+                            <a title="Sadykhzadeh" rel="sponsored" href="https://azer.one/"
+                                target="_blank">@Sadykhzadeh</a>
+                        </p>
+
+                        <a href="#section_1" class="bi-arrow-up arrow-icon custom-link"></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+
 </html>
