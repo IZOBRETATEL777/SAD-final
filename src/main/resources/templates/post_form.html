@@ -16,6 +16,32 @@
             color: white;
             text-align: center;
         }
+
+        input[type=text],
+        input[type=password],
+        input[type=email] {
+            width: 100%;
+            padding: 12px 20px 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        /* Set a style for all buttons */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
     </style>
 </head>
 
@@ -33,7 +59,8 @@
                         </div>
                         <div class="form-group text-light bg-secondary">
                             <label for="content">Content</label>
-                            <textarea th:field="*{content}" class="form-control" id="content" rows="20" style="overflow-y:scroll"></textarea>
+                            <textarea th:field="*{content}" class="form-control" id="content" rows="10"
+                                style="overflow-y:scroll"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
