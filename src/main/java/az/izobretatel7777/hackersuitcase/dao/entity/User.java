@@ -59,8 +59,8 @@ public class User {
 	@Column(name = "role", nullable = false, columnDefinition = "varchar(10) default 'USER'")
 	String role = "USER";
 
-	@Column(columnDefinition = "int default 1")
-	Integer voteWeight;
+	@Column(columnDefinition = "int default 1", nullable = false)
+	Integer voteWeight = 1;
 
 	@OneToMany(mappedBy = "author")
 	List<Comment> comments;
