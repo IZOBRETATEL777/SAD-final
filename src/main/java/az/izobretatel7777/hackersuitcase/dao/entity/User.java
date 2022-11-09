@@ -53,8 +53,8 @@ public class User {
 	@Pattern(regexp = "^[0-9]{6}$")
 	String otp;
 
-	@Column(name = "active", nullable = false, columnDefinition = "boolean default true")
-	boolean active = true;
+	@Column(name = "active", nullable = false, columnDefinition = "boolean default false")
+	boolean active = false;
 
 	@Column(name = "role", nullable = false, columnDefinition = "varchar(10) default 'USER'")
 	String role = "USER";
