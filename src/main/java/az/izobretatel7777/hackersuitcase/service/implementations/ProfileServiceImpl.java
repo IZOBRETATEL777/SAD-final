@@ -27,11 +27,6 @@ public class ProfileServiceImpl implements ProfileService {
     }
 
     @Override
-    public boolean updatePassword(User user) {
-        return false;
-    }
-
-    @Override
     public User getProfile() {
         User user = userRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication().getName());
         user.setPassword(null);

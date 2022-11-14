@@ -4,6 +4,5 @@ import az.izobretatel7777.hackersuitcase.dao.entity.User;
 
 public interface ProfileService {
     boolean updateProfile(User user);
-    boolean updatePassword(User user);
     User getProfile();
 }
