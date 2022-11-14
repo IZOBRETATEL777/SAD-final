@@ -38,6 +38,7 @@ public class LoginController {
     public String forgotPassword(String email, Model model) {
         updatePasswordService.sendResetPasswordEmail(email);
         String message = "Check your e-mail for the code to change your password!";
+        model.addAttribute("message", message);
         return "reset_password_form";
     }
 
