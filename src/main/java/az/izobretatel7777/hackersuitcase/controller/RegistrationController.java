@@ -25,10 +25,21 @@ public class RegistrationController {
 
 		return "signup_form";
 	}
+
+	@PostMapping("/otp")
+	public String sendOtp(String otp, Model model) {
+		String message;
+		if (registrationService.activateUserByOtp(otp))
+			message = "You have successfully registered!";
+		else
+			message = "Invalid OTP. Please try again!";
+		model.addAttribute("message", message);
+		return "register_finished";
+	}
 	
 	@PostMapping("/process_register")
 	public String processRegister(User user) {
 		registrationService.register(user);
-		return "register_success";
+		return "otp_form";
 	}
 }

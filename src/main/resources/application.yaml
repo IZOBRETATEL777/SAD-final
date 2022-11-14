@@ -20,3 +20,9 @@ spring:
   mustache:
     servlet:
       expose-request-attributes: true
+  mail:
+    host: smtp.yandex.com
+    port: 465
+    username: ${SPRING_MAIL_LOGIN}
+    password: ${SPRING_MAIL_PASSWROD}
+    protocol: smtps
