@@ -4,6 +4,8 @@ import az.izobretatel7777.hackersuitcase.dao.entity.User;
 import az.izobretatel7777.hackersuitcase.service.ProfileService;
 import az.izobretatel7777.hackersuitcase.service.UpdatePasswordService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -54,5 +56,14 @@ public class LoginController {
     public String updateProfile(User user) {
         profileService.updateProfile(user);
         return "profile";
+    }
+
+    @GetMapping("logout")
+    public String logout() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null) {
+            SecurityContextHolder.getContext().setAuthentication(null);
+        }
+        return "logout";
     }
 }
