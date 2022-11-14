@@ -1,5 +1,7 @@
 package az.izobretatel7777.hackersuitcase.controller;
 
+import az.izobretatel7777.hackersuitcase.dao.entity.User;
+import az.izobretatel7777.hackersuitcase.service.ProfileService;
 import az.izobretatel7777.hackersuitcase.service.UpdatePasswordService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 public class LoginController {
     private final UpdatePasswordService updatePasswordService;
+    private final ProfileService profileService;
+
     @RequestMapping("/login")
     public String login() {
         return "login";
@@ -38,5 +42,17 @@ public class LoginController {
     @GetMapping("forget_password")
     public String forgotPassword() {
         return "forget_password";
+    }
+
+    @GetMapping("profile")
+    public String profile(Model model) {
+        model.addAttribute("user", profileService.getProfile());
+        return "profile";
+    }
+
+    @PostMapping("profile")
+    public String updateProfile(User user) {
+        profileService.updateProfile(user);
+        return "profile";
     }
 }
