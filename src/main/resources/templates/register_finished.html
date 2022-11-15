@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-	<title>Registration Success</title>
-	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
-	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
-	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-	<style>
-		body {
-			background-image: url("images/background.png");
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-attachment: fixed;
-		}
-		.footer {
-			position: fixed;
-			left: 0;
-			bottom: 0;
-			width: 100%;
-			color: white;
-			text-align: center;
-		}
-	</style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Registration Successfull | H4xOR3r2 sU17C4s32!</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+	<link rel="stylesheet" href="https://cdn.materialdesignicons.com/3.2.89/css/materialdesignicons.min.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 	<div th:replace="header :: content"></div>
-	<div class="container text-center text-light">
-		<h3 th:text="${message}"></h3>
-		<h4><a th:href="@{/login}">Click here to Login</a></h4>
+	<section class="hero is-primary">
+		<div class="hero-body">
+			<div class="container hero-forum has-text-centered">
+				<h1 th:text="${message}"></h1>
+				<h2 class="subtitle">
+					Enjoy your stay!
+				</h2>
+			</div>
+		</div>
+	</section>
+	<br />
+	<div class="container">
+		<div class="columns">
+			<div class="column is-three-quarters">
+				<div class="box">
+					<article class="media">
+						<div class="media-content">
+							<div class="content">
+								<div class="field">
+									<div class="control">
+										<button th:href="@{/login}" class="button is-medium is-info">Click here to Login</button>
+									</div>
+								</div>
+								</form>
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div th:replace="footer :: content"></div>
+	<script src="js/script.js"></script>
 </body>
+
 </html>
