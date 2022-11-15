@@ -1,83 +1,126 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Post</title>
-    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
-    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>H4xOR3r2 sU17C4s32!</title>
+    <link rel="stylesheet" href="../css/bulma.min.css">
+    <link rel="stylesheet" href="../css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body class="bg-dark">
+<body>
     <div th:replace="header :: content"></div>
-
-    <div class="container bg-dark">
-        <div class="row">
-            <div class="col-md-12 text-light">
-                <p th:text="${post.getCreated()} ? ${#calendars.format(post.getCreated(), 'HH:mm dd MMMM yyyy')}"></p>
-                <p th:text="${post.getAuthor().getFirstName()}"></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="container bg-dark">
-        <div class="row">
-            <div class="col-md-12 text-light">
-                <h2 th:text="${post.getTitle()}"></h2>
-                <div th:each="line: ${post.getContent().split('\n')}">
-                    <p th:text="${line}"></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row" th:if="${authentication.getName()} eq ${post.getAuthor().getEmail()}">
-            <div class="col-md-12">
-                <a th:href="@{/posts/delete/} + ${post.id}" class="btn btn-danger">Delete</a>
-            </div>
-        </div>
-    </div>
-
-
-
-    <div class="bg-dark text-light">
-        <h3>Comments</h3>
-        <ul>
-            <li th:each="comment : ${post.getComments()}">
-                <p th:text="${comment.getAuthor().getFirstName()}"></p>
-                <p th:text="${comment.getCreated()}"></p>
-                <div th:each="line: ${comment.getContent().split('\n')}">
-                    <p th:text="${line}"></p>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 text-light">
-                        <a th:href="@{/comments/delete/} + ${comment.id}" class="btn btn-danger" th:if="${authentication.getName()} eq ${comment.getAuthor().getEmail()}">Delete</a>
-                        <a th:href="@{/comments/like/} + ${comment.id}" class="btn btn-primary">Like</a>
-                        <a th:href="@{/comments/dislike/} + ${comment.id}" class="btn btn-primary">Dislike</a>
-                        <span th:text="${comment.rating}"></span>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container hero-forum has-text-centered">
+                <div class="is-pulled-right has-text-centered ">
+                    <div class="row" th:if="${authentication.getName()} eq ${post.getAuthor().getEmail()}">
                     </div>
                 </div>
-            </li>
-        </ul>
-    </div>
-
-    <div class="container bg-dark" sec:authorize="isAuthenticated()">
-        <div class="row">
-            <div class="col-md-12 text-light">
-                <form th:action="@{/posts/} + ${post.id}" th:object="${newComment}" method="POST">
-                    <form>
-                        <div class="form-group">
-                            <label for="content">Your reply</label>
-                            <p th:if="${#fields.hasErrors('content')}" th:errors="*{content}" class="red-text">Invalid
-                                content!</p>
-                            <textarea th:field="*{content}" class="form-control" id="content" rows="3"></textarea>
+                <h1 class="title">
+                    Thread from <span th:text="${post.getAuthor().getFirstName()}"></span>
+                </h1>
+                <h2 class="subtitle">
+                    Let's see what he has to say!
+                </h2>
+                <div class="media-content box">
+                    <div class="content list-forum has-text-centered">
+                        <p class="title" style="color: black;" th:text="${post.getTitle()}"></p>
+                        <p class="subtitle">
+                        <div th:each="line: ${post.getContent().split('\n')}">
+                            <p th:text="${line}"></p>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </form>
+                        </p>
+                        <p class="info-content">
+                            <a>
+                                <i><small>Date:</small></i>
+                                <b
+                                    th:text="${post.getCreated()} ? ${#calendars.format(post.getCreated(), 'HH:mm dd MMMM yyyy')}"></b>
+                            </a>
+                        </p>
+                        <div class="col-md-12">
+                            <a th:href="@{/posts/delete/} + ${post.id}" class="button is-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br />
+    <div class="container">
+        <h1 class="title">Comments</h1>
+        <div class="columns">
+            <div class="column is-three-quarters">
+                <div class="box forum" th:each="comment : ${post.getComments()}">
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content list-forum">
+                                <div class="is-pulled-right has-text-centered ">
+                                    <h1 th:text="${comment.rating}" style="color: black"></h1>
+                                    <a href="#" class="love">
+                                        <span>
+                                            <a class="button is-success"
+                                                th:href="@{/comments/like/} + ${comment.id}">Like</a>
+                                            <a class="button is-warning"
+                                                th:href="@{/comments/dislike/} + ${comment.id}">Dislike</a>
+                                            <a class="button is-danger" th:href="@{/comments/delete/} + ${comment.id}"
+                                                th:if="${authentication.getName()} eq ${comment.getAuthor().getEmail()}">Delete</a>
+                                        </span>
+                                    </a>
+                                </div>
+                                <p class="text-content">
+                                <div th:each="line: ${comment.getContent().split('\n')}">
+                                    <p th:text="${line}"></p>
+                                </div>
+                                </p>
+                                <p class="info-content">
+                                    <a>
+                                        <i><small>by</small></i>
+                                        <b th:text="${post.getAuthor().getFirstName()}"></b>
+                                    </a>
+                                    <a>
+                                        <i><small>Date:</small></i>
+                                        <b
+                                            th:text="${post.getCreated()} ? ${#calendars.format(post.getCreated(), 'HH:mm dd MMMM yyyy')}"></b>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+        <div class="container bg-dark" sec:authorize="isAuthenticated()">
+            <h1 class="title">Your reply</h1>
+            <div class="column is-three-quarters">
+                <article class="media">
+                    <div>
+                        <form th:action="@{/posts/} + ${post.id}" th:object="${newComment}" method="POST">
+                            <div class="field is-grouped">
+                                <p th:if="${#fields.hasErrors('content')}" th:errors="*{content}" class="red-text">
+                                    Invalid
+                                    content!</p>
+                                <label>
+                                    <textarea class="textarea is-medium" th:field="*{content}" type="text"
+                                        style="min-width: 150%" id="content" placeholder="Description"
+                                        rows="4"></textarea>
+                                </label>
+                            </div>
+                            <div class="field is-grouped">
+                                <button class="button is-medium is-info" type="submit">
+                                    Create
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </article>
             </div>
         </div>
     </div>
+    <div th:replace="footer :: content"></div>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

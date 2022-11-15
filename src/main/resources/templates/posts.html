@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Welcome to H4xOR3r2 sU17C4s32!</title>
-    <link rel="stylesheet" href="css/bulma.min.css">
-    <link rel="stylesheet" href="css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/bulma.min.css">
+    <link rel="stylesheet" href="../css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -21,16 +21,16 @@
                 <h2 class="subtitle">
                     A place for hackers to share their knowledge and learn from each other.
                 </h2>
-                <div class="field is-grouped">
-                    <p class="control is-expanded">
-                        <input class="input is-medium" type="text" placeholder="Find a great content">
-                    </p>
-                    <p class="control">
-                        <a class="button is-medium is-info">
-                            Search
-                        </a>
-                    </p>
-                </div>
+                <!--<div class="field is-grouped">-->
+                <!--    <p class="control is-expanded">-->
+                <!--        <input class="input is-medium" type="text" placeholder="Find a great content" id="search">-->
+                <!--    </p>-->
+                <!--    <p class="control">-->
+                <!--    <a class="button is-medium is-info">-->
+                <!--        Search-->
+                <!--        </a>-->
+                <!--    </p>-->
+                <!--</div>-->
             </div>
         </div>
     </section>
@@ -38,18 +38,10 @@
     <div class="container">
         <div class="columns">
             <div class="column is-three-quarters">
-                <div class="box forum" th:each="post : ${posts}">
-                    <article class="media">
+                <div class="box forum">
+                    <article class="media" th:each="post : ${posts}">
                         <div class="media-content">
                             <div class="content list-forum">
-                                <div class="is-pulled-right has-text-centered ">
-                                    <a href="#" class="love">
-                                        <span>
-                                            <i class="mdi mdi-heart-outline"></i>
-                                        </span>
-                                    </a>
-                                    <span>15</span>
-                                </div>
                                 <p class="text-content">
                                     <a th:href="@{posts/} + ${post.getId()}" th:text="${post.title}">
                                     </a>
@@ -73,7 +65,7 @@
         </div>
     </div>
     <div th:replace="footer :: content"></div>
-    <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
