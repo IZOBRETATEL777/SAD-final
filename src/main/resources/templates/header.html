@@ -1,4 +1,4 @@
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <link rel="stylesheet" href="css/bulma.min.css">
 <link rel="stylesheet" href="css/materialdesignicons.min.css">
@@ -30,8 +30,10 @@
                 <div class="navbar-end">
                     <div class="navbar-item">
                         <div class="buttons">
-                            <a class="button is-primary">
-                                <strong th:href="@{/logout}">Log out</strong>
+                            <a class="button is-primary" th:href="@{/logout}">
+                                <strong>
+                                    Log out
+                                </strong>
                             </a>
                             <!-- <a class="button is-light">-->
                             <!-- Log in-->

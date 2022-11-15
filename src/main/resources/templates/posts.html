@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -57,13 +56,13 @@
                                 </p>
                                 <p class="info-content">
                                     <a>
-                                        <i class="mdi mdi-eye-outline"></i>
-                                        <small th:text="${post.getAuthor().getFirstName()}"></small>
+                                        <i><small>by</small></i>
+                                        <b th:text="${post.getAuthor().getFirstName()}"></b>
                                     </a>
                                     <a>
-                                        <i class="mdi mdi-comment-text-multiple-outline"></i>
-                                        <small
-                                            th:text="${post.getCreated()} ? ${#calendars.format(post.getCreated(), 'HH:mm dd MMMM yyyy')}"></small>
+                                        <i><small>Date:</small></i>
+                                        <b
+                                            th:text="${post.getCreated()} ? ${#calendars.format(post.getCreated(), 'HH:mm dd MMMM yyyy')}"></b>
                                     </a>
                                 </p>
                             </div>
@@ -74,7 +73,7 @@
         </div>
     </div>
     <div th:replace="footer :: content"></div>
-    <script src="./assets/js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

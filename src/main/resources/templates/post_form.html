@@ -1,74 +1,47 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Create post</title>
-    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
-    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-    <style>
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            color: white;
-            text-align: center;
-        }
-
-        input[type=text],
-        input[type=password],
-        input[type=email] {
-            width: 100%;
-            padding: 12px 20px 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-
-        /* Set a style for all buttons */
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        button:hover {
-            opacity: 0.8;
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create Post | Welcome to H4xOR3r2 sU17C4s32!</title>
+    <link rel="stylesheet" href="../css/bulma.min.css">
+    <link rel="stylesheet" href="../css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body class="bg-dark">
-
+<body>
     <div th:replace="header :: content"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-light">
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container hero-forum has-text-centered">
+                <h1 class="title">
+                    Create Post
+                </h1>
+                <h2 class="subtitle">
+                    Post-post-post-post!
+                </h2>
                 <form th:action="@{/posts/new}" th:object="${newPost}" method="POST">
-                    <form>
-                        <div class="form-group text-light bg-secondary">
-                            <label for="title">Title</label>
-                            <input type="text" th:field="*{title}" class="form-control" id="title" placeholder="Title">
-                        </div>
-                        <div class="form-group text-light bg-secondary">
-                            <label for="content">Content</label>
-                            <textarea th:field="*{content}" class="form-control" id="content" rows="10"
-                                style="overflow-y:scroll"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
+                    <div class="field is-grouped">
+                        <p class="control is-expanded">
+                            <input class="input is-medium" th:field="*{title}" type="text" placeholder="Enter topic">
+                        </p>
+                    </div>
+                    <div class="field is-grouped">
+                        <textarea class="textarea is-medium" th:field="*{content}" type="text" placeholder="Description"
+                            rows="10"></textarea>
+                    </div>
+                    <div class="field is-grouped">
+                        <button class="button is-medium is-info" type="submit">
+                            Create
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
-    </div>
+    </section>
     <div th:replace="footer :: content"></div>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
