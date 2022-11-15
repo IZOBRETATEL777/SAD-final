@@ -1,30 +1,84 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Profile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile | H4xOR3r2 sU17C4s32!</title>
+    <link rel="stylesheet" href="css/bulma.min.css">
+    <link rel="stylesheet" href="css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <div th:replace="header :: content"></div>
-
-    <form th:action="@{/profile}" th:object="${user}" method="post">
-        <label for="firstName">First Name</label>
-        <input type="text" name="firstName" id="firstName" th:value="${user.firstName}" />
-        <label for="lastName">Last Name</label>
-        <input type="text" name="lastName" id="lastName" th:value="${user.lastName}" />
-        <label for="email">Email</label>
-        <input type="text" name="email" id="email" th:value="${user.email}" disabled />
-        <label for="phoneNumber">Phone Number</label>
-        <input type="number" name="phoneNumber" id="phoneNumber" th:value="${user.phoneNumber}" />
-        <input type="submit" value="Save" />
-
-        <a href="/forget_password">Change Password</a>
-    </form>
-
-
-    <div th:replace="footer :: content"></div>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container hero-forum has-text-centered">
+                <h1 class="title">
+                    Profile
+                </h1>
+                <h2 class="subtitle">
+                    Here you can change your profile information
+                </h2>
+            </div>
+        </div>
+    </section>
+    <br />
+    <div class="container">
+        <div class="columns">
+            <div class="column is-three-quarters">
+                <div class="box">
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <form th:action="@{/profile}" th:object="${user}" method="post">
+                                    <div class="field">
+                                        <label class="label">First Name</label>
+                                        <div class="control">
+                                            <input class="input" type="text" name="firstName" id="firstName"
+                                                th:value="${user.firstName}" />
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label class="label">Last Name</label>
+                                        <div class="control">
+                                            <input class="input" type="text" name="lastName" id="lastName"
+                                                th:value="${user.lastName}" />
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label class="label">Email</label>
+                                        <div class="control">
+                                            <input class="input" type="text" name="email" id="email"
+                                                th:value="${user.email}" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label class="label">Phone Number</label>
+                                        <div class="control">
+                                            <input class="input" type="text" name="phoneNumber" id="phoneNumber"
+                                                th:value="${user.phoneNumber}" />
+                                        </div>
+                                    </div>
+                                    <div class="field is-grouped">
+                                        <div class="control">
+                                            <input class="button is-success" type="submit" value="Save" />
+                                        </div>
+                                        <div class="control">
+                                            <a class="button is-link is-warning" href="/forget_password">Change
+                                                Password</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
