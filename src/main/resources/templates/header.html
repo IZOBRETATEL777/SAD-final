@@ -1,4 +1,4 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <link rel="stylesheet" href="css/bulma.min.css">
 <link rel="stylesheet" href="css/materialdesignicons.min.css">
@@ -30,14 +30,13 @@
                 <div class="navbar-end">
                     <div class="navbar-item">
                         <div class="buttons">
-                            <a class="button is-primary" th:href="@{/logout}">
-                                <strong>
-                                    Log out
-                                </strong>
-                            </a>
-                            <!-- <a class="button is-light">-->
-                            <!-- Log in-->
-                            <!-- </a>-->
+                            <div>
+                                <a class="button is-primary" th:href="@{/logout}">
+                                    <strong>
+                                        Log out
+                                    </strong>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
