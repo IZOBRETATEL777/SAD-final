@@ -1,36 +1,54 @@
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
-</html>
+<link rel="stylesheet" href="css/bulma.min.css">
+<link rel="stylesheet" href="css/materialdesignicons.min.css">
+<link rel="stylesheet" href="css/style.css">
 
-<body>
-    <div th:fragment="content" class="header">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" th:href="@{/}">H4xOR3r2 sU17C4s32</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <nav class="nav nav-pills nav-fill">
-                    <a class="nav-item nav-link" th:href="@{/}">Home <span class="sr-only"></span></a>
-                    <a class="nav-item nav-link" th:href="@{/posts}">Posts</a>
-                    <a class="nav-item nav-link" th:href="@{/posts/new}">New Post</a>
-                </nav>
+<div th:fragment="content" class="header">
+    <nav class="navbar forum" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="">
+                    <h5 class="title is-5" th:href="@{/}">H4xOR3r2 sU17C4s32</h5>
+                </a>
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
             </div>
-            <div align="right">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link">
-                            <img src="https://www.gravatar.com/avatar/{{ md5('') }}?s=30" class="rounded-circle">
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/logout}">Logout</a>
-                    </li>
-                </ul>
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a href="#" class="navbar-item" th:href="@{/posts}">
+                        Posts
+                    </a>
+                    <a href="#" class="navbar-item" th:href="@{/posts/new}">
+                        New post
+                    </a>
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <div>
+                                <a class="button is-primary" th:href="@{/profile}">
+                                    <strong>
+                                        Profile
+                                    </strong>
+                                </a>
+                                <a class="button is-light" th:href="@{/logout}">
+                                    <strong>
+                                        Log out
+                                    </strong>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </nav>
-    </div>
-</body>
+        </div>
+    </nav>
+</div>
+<script src="js/script.js"></script>
 
 </html>

@@ -1,14 +1,58 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>OTP</title>
-</head>
-<body>
-<form th:action="@{/otp}" method="post">
-    <input type="text" name="otp" placeholder="Enter OTP">
-    <input type="submit" value="Submit">
-</form>
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OTP-verify | H4xOR3r2 sU17C4s32!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/3.2.89/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container hero-forum has-text-centered">
+                <h1 class="title">
+                    OTP
+                </h1>
+                <h2 class="subtitle">
+                    Enter your OTP code here
+                </h2>
+            </div>
+        </div>
+    </section>
+    <br />
+    <div class="container">
+        <div class="columns">
+            <div class="column is-three-quarters">
+                <div class="box">
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <form th:action="@{/otp}" method="post">
+                                    <div class="field">
+                                        <label class="label">OTP</label>
+                                        <div class="control">
+                                            <input class="input is-medium" type="number" name="number"
+                                                placeholder="Enter 6-digit OTP">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="control">
+                                            <button class="button is-medium is-info" type="submit">Enter</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
 </body>
+
 </html>

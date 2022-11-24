@@ -1,104 +1,69 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Sign Up</title>
-    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
-    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-    <style>
-        body {
-            background-image: url("images/background.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-
-        input[type=text],
-        input[type=password],
-        input[type=email] {
-            width: 100%;
-            padding: 12px 20px 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-
-        /* Set a style for all buttons */
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        button:hover {
-            opacity: 0.8;
-        }
-
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            color: white;
-            text-align: center;
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login | H4xOR3r2 sU17C4s32!</title>
+    <link rel="stylesheet" href="css/bulma.min.css">
+    <link rel="stylesheet" href="css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div th:replace="header :: content"></div>
-    <div class="container text-center text-light">
-        <div>
-            <h1>Log in</h1>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container hero-forum has-text-centered">
+                <h1 class="title">
+                    Login
+                </h1>
+                <h2 class="subtitle">
+                    You can login here!
+                </h2>
+            </div>
         </div>
-        <form th:action="@{/login}" th:object="${user}" method="post" style="max-width: 600px; margin: 0 auto;">
-            <!--        <div class="form-group mb-3">-->
-            <!--            <div class="mb-2">-->
-            <!--                <label for="username" class="sr-only">Username</label>-->
-            <!--                <input type="text" name="username" class="form-control" placeholder="username"/>-->
-            <!--            </div>-->
-            <!--            <div class="mb-2">-->
-            <!--                <label for="password" class="sr-only">Password</label>-->
-            <!--                <input type="password" name="password" class="form-control" placeholder="password"/>-->
-            <!--            </div>-->
-            <!--            <button class="btn btn-primary" type="submit">Login</button>-->
-            <!--        </div>-->
-            <div class="form-group mb-3">
-                <div class="mb-2">
-                    <label for="username" class="sr-only">Username</label>
-                    <input type="text" name="username" class="form-control" placeholder="username" />
-                </div>
-                <div class="mb-2">
-                    <label for="password" class="sr-only">Password</label>
-                    <input type="password" name="password" class="form-control" placeholder="password" />
-                </div>
-                <button class="btn btn-primary" type="submit">Login</button>
-                <div class="mb-2">
-                    <a href="/forget_password">Forgot Password?</a>
+    </section>
+    <br />
+    <div class="container">
+        <div class="columns">
+            <div class="column is-three-quarters">
+                <div class="box">
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <form th:action="@{/login}" th:object="${user}" method="post">
+                                    <div class="field">
+                                        <label class="label">email</label>
+                                        <div class="control">
+                                            <input class="input is-medium" type="email" name="username"
+                                                placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label class="label">Password</label>
+                                        <div class="control">
+                                            <input class="input is-medium" type="password" name="password"
+                                                placeholder="Password">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="control">
+                                            <button class="button is-medium is-info" type="submit">Login</button>
+                                            <a class="button is-medium is-light" th:href="@{/forget_password}">Forgot
+                                                password?</a>
+                                            <a class="button is-medium is-light" th:href="@{/register}">Not
+                                                registered?</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
-    <div th:replace="footer :: content"></div>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
-
-<!--<!DOCTYPE html>-->
-<!--<html xmlns:th="http://www.thymeleaf.org">-->
-<!--<body>-->
-<!--<div class="container">-->
-<!--    <div class="card mb-3">-->
-<!--        <form th:action="@{/login}" method="POST" class="card-body">-->
-
-<!--        </form>-->
-<!--    </div>-->
-<!--</div>-->
-<!--</body>-->
-<!--</html>-->

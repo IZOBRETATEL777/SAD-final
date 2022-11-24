@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bulma.min.css">
+    <link rel="stylesheet" href="css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Bye! | H4xOR3r2 sU17C4s32!</title>
+</head>
+
+<body>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container hero-forum has-text-centered">
+                <h1 class="title">
+                    You have been logged out!
+                </h1>
+                <h2 class="subtitle">
+                    You can login or register here!
+                </h2>
+            </div>
+        </div>
+        <a class="button is-large is-success" th:href="@{/login}">Login</a>
+        <a class="button is-large is-warning" th:href="@{/register}">Register</a>
+    </section>
+</body>
+
+</html>
