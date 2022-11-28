@@ -78,12 +78,12 @@
                                 <p class="info-content">
                                     <a>
                                         <i><small>by</small></i>
-                                        <b th:text="${post.getAuthor().getFirstName()}"></b>
+                                        <b th:text="${comment.getAuthor().getFirstName()}"></b>
                                     </a>
                                     <a>
                                         <i><small>Date:</small></i>
                                         <b
-                                            th:text="${post.getCreated()} ? ${#calendars.format(post.getCreated(), 'HH:mm dd MMMM yyyy')}"></b>
+                                            th:text="${comment.getCreated()} ? ${#calendars.format(post.getCreated(), 'HH:mm dd MMMM yyyy')}"></b>
                                     </a>
                                 </p>
                             </div>
