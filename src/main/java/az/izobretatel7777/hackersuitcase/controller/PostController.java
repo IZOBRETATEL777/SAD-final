@@ -2,12 +2,14 @@ package az.izobretatel7777.hackersuitcase.controller;
 
 import az.izobretatel7777.hackersuitcase.dao.entity.Post;
 import az.izobretatel7777.hackersuitcase.dao.repo.CommentRepository;
+import az.izobretatel7777.hackersuitcase.dao.repo.UserRepository;
 import az.izobretatel7777.hackersuitcase.dto.NewCommentForm;
 import az.izobretatel7777.hackersuitcase.dto.NewPostForm;
 import az.izobretatel7777.hackersuitcase.service.CommentService;
 import az.izobretatel7777.hackersuitcase.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -27,10 +29,15 @@ public class PostController {
     private final CommentService commentService;
     private final CommentRepository commentRepository;
 
+    private final UserRepository userRepository;
+
     @RequestMapping(method = RequestMethod.GET)
     public String getAllPosts(Model model) {
         var posts = postService.getAllPosts();
         model.addAttribute("posts", posts);
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        var user = userRepository.findByEmail(auth.getName());
+        model.addAttribute("username", user.getFirstName() + " " + user.getLastName());
         return "posts";
     }
 
