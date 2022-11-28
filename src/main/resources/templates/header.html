@@ -33,7 +33,7 @@
                             <div>
                                 <a class="button is-primary" th:href="@{/profile}">
                                     <strong>
-                                        Profile
+                                        Hello, <span th:text="${user.firstName}"></span>!
                                     </strong>
                                 </a>
                                 <a class="button is-light" th:href="@{/logout}">
